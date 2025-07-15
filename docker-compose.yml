@@ -10,6 +10,8 @@ services:
     pid: host
     devices:
       - /dev/dri/card1
+      - /dev/bus/usb:/dev/bus/usb
+      - /dev/input:/dev/input
     privileged: true
     environment:
       - UID=${HOST_UID}

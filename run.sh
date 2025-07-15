@@ -8,8 +8,9 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 export HOST_UID=$(id -u)
 
-docker compose -f $SCRIPT_DIR/docker-compose.yml run \
+docker compose -f $SCRIPT_DIR/docker-compose.yml run --rm \
 --volume $(pwd)/piper_ros:/colcon_ws/src/piper_ros \
 --volume /tmp/.X11-unix \
 --env DISPLAY \
+-v /dev/bus/usb:/dev/bus/usb \
 ${REPOSITORY_NAME} bash

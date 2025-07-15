@@ -32,6 +32,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-gazebo-ros-pkgs \
     tmux \
     vim \
+    libhidapi-dev \
+    libusb-1.0-0-dev \
+    libudev-dev \
+    iproute2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Ensuring MoveIt, RViz parse decimal numbers correctly—by using a period (.) as the decimal separator. 
